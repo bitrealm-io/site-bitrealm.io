@@ -12,6 +12,7 @@ The one-page site for Bitrealm LLC. Plain HTML and CSS, no build step, no JavaSc
 - `og.png` – 1200×630 preview image for shared links
 - `_headers` – security headers Cloudflare Pages applies to every response
 - `robots.txt`, `sitemap.xml`
+- `brand/` – the brand style guide: `Bitrealm-LLC-Brand-Style-Guide.pdf` and its source, `brand-style-guide.html`. Rebuild the PDF from inside `brand/` with `chromium --headless --no-pdf-header-footer --print-to-pdf=Bitrealm-LLC-Brand-Style-Guide.pdf brand-style-guide.html`
 
 ## Deploy on Cloudflare Pages
 

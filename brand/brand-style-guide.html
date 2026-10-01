@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bitrealm LLC Brand Style Guide</title>
+<!-- Source for Bitrealm-LLC-Brand-Style-Guide.pdf. Rebuild:
+     chromium --headless --no-pdf-header-footer --print-to-pdf=Bitrealm-LLC-Brand-Style-Guide.pdf brand-style-guide.html -->
+<style>
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("../fonts/ibm-plex-mono-400.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("../fonts/ibm-plex-mono-500.woff2") format("woff2"); }
+@page { size: 8.5in 11in; margin: 0; }
+:root { --bg:#000; --surface:#181a18; --line:#484d47; --muted:#9ba699; --ink:#efffeb; --accent:#ff6044; --accent-dark:#d83a1f; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; background: var(--bg); }
+body { color: var(--ink); font: 400 12px/1.6 "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; }
+p { margin: 0; }
+strong { font-weight: 500; }
+code { font: inherit; font-size: 11px; }
+.page { width: 8.5in; height: 11in; padding: 0.75in 0.75in 0.5in; display: flex; flex-direction: column; break-after: page; overflow: hidden; }
+.page:last-child { break-after: auto; }
+.body { flex: 1; }
+.foot { display: flex; justify-content: space-between; border-top: 1px solid var(--muted); padding-top: 10px; color: var(--muted); font-size: 11px; }
+.eyebrow { color: var(--muted); font-size: 11px; letter-spacing: 0.06em; margin-bottom: 22px; }
+h1 { margin: 0; font-weight: 400; font-size: 26px; line-height: 1.2; }
+h2 { margin: 26px 0 8px; font-weight: 400; font-size: 16px; line-height: 1.2; }
+.intro { margin-top: 6px; }
+.note { color: var(--muted); font-size: 11px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stack > * + * { margin-top: 10px; }
+
+.wm { display: inline-flex; align-items: center; gap: 0.4em; letter-spacing: 0.06em; }
+.wm svg { width: 1em; height: 1em; fill: var(--accent); }
+
+/* cover */
+.cover .wm { font-size: 26px; }
+.cover .title { margin-top: 290px; font-size: 62px; line-height: 1; }
+.cover .lede { margin-top: 28px; font-size: 14px; max-width: 46ch; }
+
+/* wordmark */
+.lockups { display: grid; grid-template-columns: 410px 1fr; gap: 20px; }
+.lock { display: grid; place-items: center; border-radius: 8px; }
+.lock.primary { height: 132px; border: 1px solid var(--line); font-size: 40px; }
+.lock.small { height: 76px; font-size: 22px; color: #000; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.on-mint { background: var(--ink); }
+.on-coral { background: var(--accent); }
+.on-coral svg { fill: #000; }
+
+/* colour */
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+.sw { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.sw i { display: block; height: 40px; }
+.sw div { padding: 8px 10px 10px; font-size: 11px; line-height: 1.45; }
+.grad { height: 20px; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 8px;
+  background: linear-gradient(90deg, #000 0%, #000 30%, #010b17 50%, #101c29 67%, #3c5264 80%, #b2c5d3 100%); }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-weight: 400; color: var(--muted); }
+th, td { padding: 5px 8px; border-bottom: 1px solid var(--muted); vertical-align: top; }
+.bad td, td.bad, th.bad { color: var(--accent); }
+
+/* type */
+.spec { display: grid; grid-template-columns: 146px 1fr; align-items: end; border-bottom: 1px solid var(--muted); padding: 14px 0 12px; }
+.spec > div:first-child { color: var(--muted); font-size: 11px; line-height: 1.4; }
+.t-display { font-size: 34px; font-weight: 500; line-height: 1; text-transform: uppercase; }
+.t-heading { font-size: 30px; line-height: 1.2; }
+.t-label { font-size: 19px; line-height: 1.2; }
+.t-nav { color: var(--muted); word-spacing: 1.4em; }
+.t-num { font-size: 64px; font-weight: 500; line-height: 1; color: var(--accent); }
+
+/* components */
+.button { display: inline-block; white-space: nowrap; font-size: 11px; padding: 9px 14px; border-radius: 6px; background: var(--accent); color: #000; }
+.button.hover { background: var(--accent-dark); margin-left: 10px; }
+.pill { display: inline-block; background: var(--surface); border-radius: 6px; padding: 10px 16px; word-spacing: 1.2em; }
+.bar { border-left: 3px solid var(--accent); padding-left: 18px; max-width: 34ch; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+.card.filled { background: var(--line); border: 0; }
+.card h3 { margin: 0 0 8px; font-weight: 400; font-size: 17px; line-height: 1.2; }
+.icon { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--ink); border-radius: 6px; margin-bottom: 16px; }
+.icon svg { width: 22px; height: 22px; fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+.comp h2:first-child { margin-top: 0; }
+.comp p { margin-top: 10px; }
+
+/* hero */
+.hero { position: relative; height: 380px; margin-top: 16px; border-radius: 8px; overflow: hidden;
+  background: linear-gradient(180deg, #000 0%, #000 30%, #010b17 50%, #101c29 67%, #3c5264 80%, #b2c5d3 100%); }
+.hero svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero .txt { position: absolute; left: 30px; top: 34px; }
+.hero .txt b { display: block; font-weight: 500; font-size: 40px; line-height: 1; text-transform: uppercase; }
+.hero .txt span { display: block; margin-top: 16px; font-size: 11px; }
+
+/* tokens */
+pre { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; font: inherit; font-size: 10.5px; line-height: 1.55; white-space: pre; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="mark" viewBox="0 0 24 24"><path d="M3 2h5v3H6v14h2v3H3zm18 0h-5v3h2v14h-2v3h5z"/><rect x="9.5" y="9.5" width="5" height="5"/></symbol></svg>
+
+<section class="page cover">
+  <div class="body">
+    <span class="wm"><svg><use href="#mark"/></svg>BITREALM</span>
+    <div class="title">BRAND<br>STYLE<br>GUIDE</div>
+    <p class="lede">Colours, type, components, imagery, and voice for Bitrealm LLC and bitrealm.io, written down so the site, print, slides, and email match.</p>
+  </div>
+  <p class="note">Version 1.2 · September 2026 · bitrealm.io</p>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">01 · IDEA AND WORDMARK</p>
+    <h1>Dark, monospaced, one accent.</h1>
+    <p class="intro">The brand reads like a terminal in a dark room: black ground, pale mint text, and a single coral accent that marks the one thing to act on. It looks like what the work is: software, measured and unhurried. No gradients on text, no photos of people, no second accent colour.</p>
+    <h2>Wordmark</h2>
+    <div class="lockups">
+      <div>
+        <div class="lock primary"><span class="wm"><svg><use href="#mark"/></svg>BITREALM</span></div>
+        <div class="pair">
+          <div class="lock small on-mint"><span class="wm"><svg><use href="#mark"/></svg>BITREALM</span></div>
+          <div class="lock small on-coral"><span class="wm"><svg><use href="#mark"/></svg>BITREALM</span></div>
+        </div>
+      </div>
+      <div class="stack">
+        <p><strong>Mark.</strong> A coral square between two coral square brackets, on a 24-unit grid. The brackets run from y 2 to y 22, 3 units thick, with 5-unit arms, at x 3 and x 21. The square is 5 by 5, centred at (12,12). One bit, held in brackets.</p>
+        <p><strong>Word.</strong> BITREALM in IBM Plex Mono Regular, uppercase, letter-spacing 0.06em. The mark sits on the cap height, gap of 0.4em. Write “Bitrealm LLC” in running text; use the uppercase form only as the wordmark.</p>
+        <p><strong>Tagline.</strong> “Software that ships.” Sentence case, with the full stop, in Mint. It may sit under the wordmark or stand alone as a heading.</p>
+        <p><strong>Clear space.</strong> Keep one mark-width free on all sides. Minimum height: 16px on screen, 5mm in print.</p>
+        <p><strong>Colour.</strong> Coral mark with mint word on black is the primary lockup. On a mint or coral ground the whole mark goes black. Never white on coral (2.9:1, fails contrast) and never a coral word.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>2</span></div>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">02 · COLOUR</p>
+    <h1>Seven core colours, two supporting.</h1>
+    <p class="intro">Black is the ground. Mint is the ink. Coral is the only accent and it means “act here”: buttons, the accent bar, the mark, a headline number. Everything else is a grey with a touch of green so it sits well next to mint.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#000"></i><div><strong>Black</strong><br>#000000<br>rgb(0, 0, 0)<br>Page ground</div></div>
+      <div class="sw"><i style="background:#181a18"></i><div><strong>Surface</strong><br>#181A18<br>rgb(24, 26, 24)<br>Cards, nav pill</div></div>
+      <div class="sw"><i style="background:#484d47"></i><div><strong>Slate</strong><br>#484D47<br>rgb(72, 77, 71)<br>Borders, filled cards</div></div>
+      <div class="sw"><i style="background:#9ba699"></i><div><strong>Ash</strong><br>#9BA699<br>rgb(155, 166, 153)<br>Secondary text, captions</div></div>
+      <div class="sw"><i style="background:#efffeb"></i><div><strong>Mint</strong><br>#EFFFEB<br>rgb(239, 255, 235)<br>All primary text, rules, icon outlines</div></div>
+      <div class="sw"><i style="background:#ff6044"></i><div><strong>Coral</strong><br>#FF6044<br>rgb(255, 96, 68)<br>Buttons, mark, accent bar, headline numbers</div></div>
+      <div class="sw"><i style="background:#d83a1f"></i><div><strong>Coral dark</strong><br>#D83A1F<br>rgb(216, 58, 31)<br>Button hover and pressed</div></div>
+      <div class="sw"><i style="background:linear-gradient(135deg,#58afdb 50%,#c5e8ff 50%)"></i><div><strong>Sky · Pale sky</strong><br>#58AFDB · #C5E8FF<br>Supporting only: charts, diagram highlights. Never for UI.</div></div>
+    </div>
+    <h2>Depth gradient</h2>
+    <div class="grad"></div>
+    <p>Used behind the hero graphic and the background panel. Vertical, top to bottom: #000000 0% → #000000 30% → #010B17 50% → #101C29 67% → #3C5264 80% → #B2C5D3 100%. Text sits only over the black top half. Never use it behind cards or under body copy.</p>
+    <h2>Contrast (WCAG)</h2>
+    <table>
+      <tr><th>Pair</th><th>Ratio</th><th>Use</th></tr>
+      <tr><td>Mint on Black</td><td>20.2:1</td><td>Body and headings</td></tr>
+      <tr><td>Mint on Surface</td><td>16.8:1</td><td>Card text</td></tr>
+      <tr><td>Mint on Slate</td><td>8.3:1</td><td>Text on filled cards</td></tr>
+      <tr><td>Ash on Black / Surface</td><td>8.3:1 / 6.9:1</td><td>Captions, nav, footer</td></tr>
+      <tr><td>Coral on Black · Black on Coral</td><td>7.0:1</td><td>Headline numbers, accent · button label</td></tr>
+      <tr><td>Black on Coral dark</td><td>4.5:1</td><td>Hover state, still AA</td></tr>
+      <tr class="bad"><td>Mint on Coral</td><td>2.9:1</td><td>Fails. Button labels are always black.</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>3</span></div>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">03 · TYPOGRAPHY</p>
+    <h1>IBM Plex Mono, and only that.</h1>
+    <p class="intro">One family at two weights. Regular (400) for everything; Medium (500) only for the display heading, headline numbers, and bold runs inside a paragraph. Open Font License, free for commercial use, on Google Fonts. Self-host the two woff2 files; do not load from Google at runtime. Fallback stack: <code>ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace</code>.</p>
+    <div style="margin-top:14px">
+      <div class="spec"><div>Display<br>70px · 500 · 1.0<br>uppercase, justified</div><div class="t-display">Software that ships.</div></div>
+      <div class="spec"><div>Heading<br>48px · 400 · 1.2</div><div class="t-heading">Say what the work is.</div></div>
+      <div class="spec"><div>Section label<br>24px · 400 · 1.2</div><div class="t-label">Software</div></div>
+      <div class="spec"><div>Card title<br>24px · 400 · 1.2</div><div class="t-label">Message Crate</div></div>
+      <div class="spec"><div>Body<br>14px · 400 · 1.6</div><div>Bitrealm LLC is a software company in Orlando, Florida, and the publisher of Message Crate.</div></div>
+      <div class="spec"><div>Emphasis<br>14px · 500</div><div><strong>Bitrealm LLC.</strong> A Florida limited liability company.</div></div>
+      <div class="spec"><div>Caption / nav<br>14px · 400 · Ash</div><div class="t-nav">Software Contact</div></div>
+      <div class="spec"><div>Headline number<br>85px · 500 · Coral</div><div class="t-num">2026</div></div>
+    </div>
+    <h2>Rules</h2>
+    <p>Sentence case everywhere except the display heading and the wordmark. No italics (the family is loaded without them). No letter-spacing on body text. Measure 60 to 70 characters. Headings never wrap past four lines; cut words before shrinking the size. The justified display heading is a deliberate quirk of the brand: keep <code>text-align: justify</code> with <code>text-align-last: left</code>, and accept the gaps. Sizes above are screen sizes; samples on this page are scaled to fit.</p>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>4</span></div>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">04 · COMPONENTS</p>
+    <h1>Buttons, pill, cards, bar.</h1>
+    <div class="cols comp" style="margin-top:14px">
+      <div>
+        <h2>Button</h2>
+        <span class="button">hello@bitrealm.io</span><span class="button hover">hello@bitrealm.io</span>
+        <p>Coral fill, black label, 14px, radius 6px, padding 12px 26px. Hover: Coral dark. One per screen region. There is no secondary button; a secondary action is a plain underlined link in Ash.</p>
+        <h2>Nav pill</h2>
+        <span class="pill">Software Contact</span>
+        <p>Surface fill, radius 6px, links 14px Mint, 12px vertical padding. The button sits outside the pill, to its right.</p>
+        <h2>Accent bar</h2>
+        <div class="bar">A 3px Coral rule on the left of a text block, 22px gap. Used when a heading sits left and its text sits right.</div>
+      </div>
+      <div>
+        <h2>Card, outlined</h2>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 8.500 12 4l9 4.500v8L12 21l-9-4.500z"/><path d="M3 8.500 12 13l9-4.500M12 13v8"/></svg></span>
+          <h3>Message Crate</h3>
+          Surface fill, 1px Slate border, radius 8px, padding 24px. Icon box 48px, 1px Mint outline, radius 6px, 1.2px stroke icon.
+        </div>
+        <h2>Card, filled</h2>
+        <div class="card filled">
+          <h3>Contact</h3>
+          Slate fill, no border, same radius and padding. For overlapping a hero or gradient where the outlined card would vanish.
+        </div>
+        <h2>Rules</h2>
+        <div>Section dividers are 1px Slate. The footer divider is 1px Mint, full-bleed. Layout: max width 1200px, 48px side gutters, 12-column feel with 32px gaps; cards four across, two on tablet, one on phone.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>5</span></div>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">05 · IMAGERY AND THE HERO</p>
+    <h1>A point cloud over the depth gradient.</h1>
+    <div class="hero">
+      <svg id="cloud" viewBox="0 0 672 380" preserveAspectRatio="none"></svg>
+      <div class="txt"><b>Software<br>that<br>ships.</b><span>Bitrealm LLC · Orlando, FL</span></div>
+    </div>
+    <div class="cols" style="margin-top:22px">
+      <div class="stack">
+        <p><strong>What it is.</strong> Small near-white dots (#EEF4FF, 25 to 100 percent opacity, radius 0.8 to 2.2px on a 1920 grid) in three layers: a sparse field, a few dense clusters, and dotted lines running vertically and along shallow diagonals. It sits on the depth gradient, black at the top fading to pale slate at the foot.</p>
+        <p><strong>Why.</strong> Structure emerging from points. It is also the one place the brand allows something other than flat colour.</p>
+      </div>
+      <div class="stack">
+        <p><strong>Rules.</strong> Text goes over the black upper half only, in Mint. Never put a card or body paragraph on it. The graphic is generated from a deterministic seed and can be regenerated for other crops; do not replace it with stock footage or a photo. Motion is optional: if animated, drift the dots slowly, no flashes, respect <code>prefers-reduced-motion</code>.</p>
+        <p><strong>Licence note.</strong> The graphic is an original asset and is safe to reuse anywhere.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>6</span></div>
+</section>
+
+<section class="page">
+  <div class="body">
+    <p class="eyebrow">06 · VOICE AND TOKENS</p>
+    <h1>Say what the work is. Stop.</h1>
+    <div class="cols" style="margin-top:8px">
+      <div>
+        <p>Short sentences. Plain nouns. Numbers where they exist, none invented. Write “Bitrealm LLC” or “the company” for the entity; no “I”, and no “we”. No adjectives that cannot be checked (“cutting-edge”, “world-class”). The reader wants to know what the company is, what it publishes, and how to reach it; tell them that.</p>
+        <table style="margin-top:18px">
+          <tr><th>Write</th><th class="bad">Not</th></tr>
+          <tr><td>Bitrealm LLC is the publisher of Message Crate.</td><td class="bad">Leveraging deep expertise to transform how the world communicates.</td></tr>
+          <tr><td>Contact the company by email: hello@bitrealm.io.</td><td class="bad">Reach out today to unlock your potential!</td></tr>
+          <tr><td>A Florida limited liability company in Orlando, FL.</td><td class="bad">A world-class global technology leader.</td></tr>
+        </table>
+      </div>
+      <div>
+<pre>:root {
+  --bg:      #000000;   /* Black      */
+  --surface: #181a18;   /* Surface    */
+  --line:    #484d47;   /* Slate      */
+  --muted:   #9ba699;   /* Ash        */
+  --ink:     #efffeb;   /* Mint       */
+  --accent:  #ff6044;   /* Coral      */
+  --accent-dark: #d83a1f;
+  --sky:     #58afdb;   /* charts only */
+  --pale:    #c5e8ff;
+  --measure: 75rem;     /* 1200px     */
+  --gutter:  clamp(1.25rem, 4vw, 3rem);
+}
+body {
+  font: 400 14px/1.6 "IBM Plex Mono",
+        ui-monospace, Menlo, Consolas,
+        monospace;
+}
+h1 { font-size: 70px; font-weight: 500;
+     line-height: 1;
+     text-transform: uppercase;
+     text-align: justify;
+     text-align-last: left; }
+h2 { font-size: 48px; line-height: 1.2; }
+h3, .label { font-size: 24px; }
+.button { background: var(--accent);
+          color: #000;
+          border-radius: 6px;
+          padding: 12px 26px; }
+.button:hover {
+  background: var(--accent-dark); }</pre>
+        <p class="note" style="margin-top:12px">Fonts: fonts/ibm-plex-mono-400.woff2, fonts/ibm-plex-mono-500.woff2 (Google Fonts build, OFL 1.1). Print: colours are sRGB; for CMYK ask the printer to match #FF6044 to Pantone 171 C or nearest.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bitrealm brand style guide</span><span>7</span></div>
+</section>
+
+<script>
+// Deterministic point cloud: sparse field, dense clusters, dotted lines.
+(function () {
+  var s = 20260930;
+  function r() { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }
+  function g() { return (r() + r() + r() + r() - 2) / 2; }
+  var W = 672, H = 380, out = "";
+  function dot(x, y, rad, o) {
+    if (x < 0 || x > W || y < 0 || y > H) return;
+    out += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + rad.toFixed(2) + '" opacity="' + o.toFixed(2) + '"/>';
+  }
+  var i, j;
+  for (i = 0; i < 420; i++) dot(r() * W, r() * H, 0.3 + r() * 0.45, 0.25 + r() * 0.5);
+  for (i = 0; i < 7; i++) {
+    var cx = 220 + r() * 430, cy = 40 + r() * 300, sp = 14 + r() * 22;
+    for (j = 0; j < 70; j++) dot(cx + g() * sp * 2.2, cy + g() * sp, 0.35 + r() * 0.5, 0.4 + r() * 0.6);
+  }
+  for (i = 0; i < 16; i++) {
+    var x = r() * W, y0 = r() * 200, len = 80 + r() * 220;
+    for (j = 0; j < len; j += 5) dot(x, y0 + j, 0.3, 0.3);
+  }
+  for (i = 0; i < 6; i++) {
+    var x0 = r() * 300, yy = 30 + r() * 260, slope = (r() - 0.5) * 0.25, l = 200 + r() * 300;
+    for (j = 0; j < l; j += 5) dot(x0 + j, yy + j * slope, 0.3, 0.35);
+  }
+  var el = document.getElementById("cloud");
+  el.setAttribute("fill", "#eef4ff");
+  el.innerHTML = out;
+})();
+</script>
+</body>
+</html>
